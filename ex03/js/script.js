@@ -1,3 +1,17 @@
+/*
+ * Задание 3.
+ * 1. Реализовать чат на основе эхо-сервера wss://echo.websocket.org/
+ * Интерфейс состоит из input, куда вводится текст сообщения, и кнопки
+ * «Отправить». При клике на кнопку «Отправить» сообщение должно появляться
+ * в окне переписки. Эхо-сервер будет отвечать вам тем же сообщением, его также
+ * необходимо выводить в чат.
+ * 
+ * 2. Добавить в чат механизм отправки гео-локации:
+ * При клике на кнопку «Гео-локация» необходимо отправить данные серверу и
+ * в чат вывести ссылку на https://www.openstreetmap.org/ с вашей гео-локацией.
+ * Сообщение, которое отправит обратно эхо-сервер, не выводить.
+ */
+
 const echoURL = "wss://echo.websocket.org/";
 const mapsURL = "https://www.openstreetmap.org/#map=18/";
 
@@ -121,7 +135,7 @@ buttonGeolocationNode.addEventListener("click", () => {
       },
       () => {
         alert("Sorry, we're unable to find your location");
-        
+
         buttonGeolocationNode.classList.toggle("pulse");
         buttonGeolocationIconNode.classList.toggle("pulse");
       });
